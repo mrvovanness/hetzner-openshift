@@ -58,7 +58,7 @@ module Hetzner
   end
 end
 
-Thread.abort_on_exception=true
+Thread.abort_on_exception = true
 threads = []
 
 Hetzner::SERVERS.each do |server|

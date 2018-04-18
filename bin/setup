@@ -1,3 +1,4 @@
 git clone https://github.com/openshift/openshift-ansible
+touch .env
 sudo dnf install -y  ansible pyOpenSSL python-cryptography python-lxml ruby
 bundle install

@@ -1,0 +1,21 @@
+[masters]
+ose3-master[0:2].a-ads.com
+
+[nodes]
+ose3-master[0:2].a-ads.com
+
+
+[OSEv3:children]
+masters
+nodes
+
+[OSEv3:vars]
+ansible_user=root
+
+openshift_deployment_type=origin
+openshift_release=v3.7
+
+# default subdomain to use for exposed routes, you should have wildcard dns
+# for *.apps.a-ads.com.com that points at your infra nodes which will run
+# your router
+openshift_master_default_subdomain=apps.a-ads.com

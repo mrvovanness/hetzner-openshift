@@ -1,0 +1,19 @@
+set -e 
+
+echo 'Install centos on all hosts'
+
+source .env && ruby util/boot_hetzner.rb
+
+echo 'Add dns entries'
+
+source .env && ruby util/setup_dns.rb
+
+echo 'Check prerequisites'
+
+ansible-playbook -i inventory/hosts \
+  openshift-ansible/playbooks/prerequisites.yml
+
+echo 'Create cluster'
+
+ansible-playbook -i inventory/hosts \
+  openshift-ansible/playbooks/deploy_cluster.yml

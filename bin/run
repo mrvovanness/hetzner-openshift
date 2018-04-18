@@ -16,4 +16,4 @@ ansible-playbook -i inventory/hosts \
 echo 'Create cluster'
 
 ansible-playbook -i inventory/hosts \
-  openshift-ansible/playbooks/deploy_cluster.yml
+  openshift-ansible/playbooks/byo/config.yml

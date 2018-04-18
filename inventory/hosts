@@ -4,10 +4,14 @@ ose3-master[0:2].a-ads.com
 [nodes]
 ose3-master[0:2].a-ads.com
 
+[etcd]
+ose3-master[0:2].a-ads.com
+
 
 [OSEv3:children]
 masters
 nodes
+etcd
 
 [OSEv3:vars]
 ansible_user=root

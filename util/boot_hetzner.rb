@@ -43,7 +43,7 @@ module Hetzner
         post_install: 'echo done',
 
         # remote postinstall
-        post_install_remote: 'hostname'
+        post_install_remote: 'sysctl dev.raid.speed_limit_max=10'
       }
       @worker.bootstrap!
     end

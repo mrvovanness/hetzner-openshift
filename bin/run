@@ -10,10 +10,8 @@ source .env && ruby util/setup_dns.rb
 
 echo 'Install prerequisites'
 
-ansible-playbook -i inventory/hosts \
-  openshift-ansible/playbooks/prerequisites.yml
+ansible-playbook openshift-ansible/playbooks/prerequisites.yml
 
 echo 'Create cluster'
 
-ansible-playbook -i inventory/hosts \
-  openshift-ansible/playbooks/deploy_cluster.yml
+ansible-playbook openshift-ansible/playbooks/deploy_cluster.yml

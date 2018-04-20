@@ -1,21 +1,24 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+glusterfs
+#lb
+
 [masters]
 ose3-master[0:2].a-ads.com
 
 [nodes]
 ose3-master[0:2].a-ads.com
 
-#[lb]
-#ose3-master[0:2].a-ads.com
-
 [etcd]
 ose3-master[0:2].a-ads.com
 
+[glusterfs]
+ose3-master[0:2].a-ads.com glusterfs_devices='[ "/dev/md2" ]'
 
-[OSEv3:children]
-masters
-nodes
-etcd
-#lb
+#[lb]
+#ose3-master[0:2].a-ads.com
 
 [OSEv3:vars]
 ansible_user=root

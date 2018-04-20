@@ -8,8 +8,8 @@ BOOTLOADER grub
 
 HOSTNAME <%= hostname %>
 
-PART swap swap 16G
 PART /boot ext3 512M
-PART / xfs all
+PART / xfs 50G
+PART /glusterfs xfs all
 
 IMAGE /root/.oldroot/nfs/install/../images/CentOS-74-64-minimal.tar.gz

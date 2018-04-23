@@ -1,15 +1,16 @@
 DRIVE1 /dev/sda
 DRIVE2 /dev/sdb
 
-SWRAID 1
-SWRAIDLEVEL 1
-
+SWRAID 0
 BOOTLOADER grub
 
 HOSTNAME <%= hostname %>
 
 PART /boot ext3 512M
-PART / xfs 50G
-PART /glusterfs xfs all
+PART lvm vg0 50G
+PART swap xfs all
 
-IMAGE /root/.oldroot/nfs/install/../images/CentOS-74-64-minimal.tar.gz
+LV vg0   root     /     xfs         50G        all
+
+#IMAGE /root/.oldroot/nfs/install/../images/CentOS-74-64-minimal.tar.gz
+IMAGE https://s3-eu-west-1.amazonaws.com/files.a-ads.com/CentOS-74-64-custom2.tar.gz

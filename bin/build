@@ -1,0 +1,19 @@
+set -e
+
+#scp root@ose3-master0.a-ads.com:/root/.oldroot/nfs/install/../images/CentOS-74-64-minimal.tar.gz /tmp
+
+mkdir /tmp/centos-custom || echo dir /tmp/centos-custom already exists
+
+echo 'unpack hetzner default image'
+sudo tar -pzxf /tmp/CentOS-74-64-minimal.tar.gz -C /tmp/centos-custom
+
+echo 'install and activate NetworkManager'
+sudo chroot /tmp/centos-custom bash -lc 'echo nameserver 8.8.8.8 > /etc/resolv.conf && yum install NetworkManager -y && systemctl enable NetworkManager'
+
+echo 'create new archive'
+cd /tmp/centos-custom && \
+  sudo tar -pzcf ../CentOS-74-64-custom.tar.gz . && \
+  cd -
+
+echo 'Upload to s3'
+aws s3 cp /tmp/CentOS-74-64-custom.tar.gz s3://files.a-ads.com/CentOS-74-64-custom.tar.gz

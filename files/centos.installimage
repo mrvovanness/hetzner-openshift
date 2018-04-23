@@ -12,5 +12,4 @@ PART swap xfs all
 
 LV vg0   root     /     xfs         50G        all
 
-#IMAGE /root/.oldroot/nfs/install/../images/CentOS-74-64-minimal.tar.gz
-IMAGE https://s3-eu-west-1.amazonaws.com/files.a-ads.com/CentOS-74-64-custom2.tar.gz
+IMAGE https://s3-eu-west-1.amazonaws.com/files.a-ads.com/CentOS-74-64-custom.tar.gz

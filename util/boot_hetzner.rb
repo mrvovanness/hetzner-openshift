@@ -37,13 +37,7 @@ module Hetzner
         hostname: @hostname,
 
         # This key will be copied to server
-        public_keys: @ssh_key,
-
-        # local postinstall
-        post_install: 'echo done',
-
-        # remote postinstall
-        post_install_remote: 'sysctl dev.raid.speed_limit_max=10'
+        public_keys: @ssh_key
       }
       @worker.bootstrap!
     end

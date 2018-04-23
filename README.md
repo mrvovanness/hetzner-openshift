@@ -7,6 +7,9 @@ fully automated deployment of openshift on hetzner bare metal servers
 # install local requirements
 bin/setup
 
+# build custom centos image
+bin/build
+
 # create .env file
 cp .env.example .env
 

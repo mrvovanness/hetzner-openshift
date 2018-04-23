@@ -15,7 +15,7 @@ ose3-master[0:2].a-ads.com
 ose3-master[0:2].a-ads.com
 
 [glusterfs]
-ose3-master[0:2].a-ads.com glusterfs_devices='[ "/dev/md2" ]'
+ose3-master[0:2].a-ads.com glusterfs_devices='[ "/dev/sda3", "/dev/sdb3" ]'
 
 #[lb]
 #ose3-master[0:2].a-ads.com

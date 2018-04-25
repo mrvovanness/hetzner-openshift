@@ -15,13 +15,15 @@ ose3-master[0:2].a-ads.com
 ose3-master[0:2].a-ads.com
 
 [glusterfs]
-ose3-master[0:2].a-ads.com glusterfs_devices='[ "/dev/sda3", "/dev/sdb3" ]'
+ose3-master[0:2].a-ads.com glusterfs_devices='[ "/dev/md2" ]'
 
 #[lb]
 #ose3-master[0:2].a-ads.com
 
 [OSEv3:vars]
 ansible_user=root
+
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
 
 openshift_deployment_type=origin
 openshift_release=v3.9

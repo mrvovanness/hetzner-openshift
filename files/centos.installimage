@@ -1,15 +1,15 @@
 DRIVE1 /dev/sda
 DRIVE2 /dev/sdb
 
-SWRAID 0
+SWRAID 1
+SWRAIDLEVEL 1
+
 BOOTLOADER grub
 
 HOSTNAME <%= hostname %>
 
 PART /boot ext3 512M
-PART lvm vg0 50G
+PART / xfs 50G
 PART swap xfs all
-
-LV vg0   root     /     xfs         50G        all
 
 IMAGE https://s3-eu-west-1.amazonaws.com/files.a-ads.com/CentOS-74-64-custom.tar.gz

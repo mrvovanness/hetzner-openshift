@@ -37,18 +37,20 @@ module Hetzner
         hostname: @hostname,
 
         # This key will be copied to server
-        public_keys: @ssh_key
+        public_keys: @ssh_key,
+
+        post_install_remote: 'sysctl dev.raid.speed_limit_max=10; pvcreate /dev/md2 -f',
       }
       @worker.bootstrap!
     end
 
  private
    
-   def server_info
-     @server_info ||= @api.server?(@ip)
-     fail "api error: #{@server_info.response}" if @server_info.code.to_i > 299
-     @server_info['server']
-   end
+    def server_info
+      @server_info ||= @api.server?(@ip)
+      fail "api error: #{@server_info.response}" if @server_info.code.to_i > 299
+      @server_info['server']
+    end
   end
 end
 

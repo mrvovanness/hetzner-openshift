@@ -9,7 +9,7 @@ glusterfs
 ose3-master[0:2].a-ads.com
 
 [nodes]
-ose3-master[0:2].a-ads.com
+ose3-master[0:2].a-ads.com openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
 
 [etcd]
 ose3-master[0:2].a-ads.com

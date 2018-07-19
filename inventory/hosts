@@ -27,6 +27,11 @@ openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 
 
 openshift_deployment_type=origin
 openshift_release=v3.9
+openshift_logging_es_pvc_dynamic=true
+
+openshift_grafana_storage_type=pvc
+openshift_grafana_sc_name=glusterfs-storage
+openshift_grafana_node_exporter=true
 
 # default subdomain to use for exposed routes, you should have wildcard dns
 # for *.apps.a-ads.com.com that points at your infra nodes which will run

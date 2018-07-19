@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+    - copy:
+        src: files/selinux_config
+        dest: /etc/selinux/config

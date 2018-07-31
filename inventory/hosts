@@ -33,6 +33,10 @@ openshift_grafana_storage_type=pvc
 openshift_grafana_sc_name=glusterfs-storage
 openshift_grafana_node_exporter=true
 
+openshift_prometheus_storage_type=pvc
+openshift_prometheus_storage_class=glusterfs-storage
+
+
 # default subdomain to use for exposed routes, you should have wildcard dns
 # for *.apps.a-ads.com.com that points at your infra nodes which will run
 # your router
